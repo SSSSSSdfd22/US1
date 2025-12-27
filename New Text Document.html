@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cat Lovers' Corner</title>
+    
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fdf5e6; /* Creamy background */
+            color: #5a463a; /* Dark brown text */
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Header */
+        header {
+            background-color: #ffb6c1; /* Soft pink */
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #ff9aab;
+            border-radius: 5px;
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Hero Section */
+        #hero {
+            background: url('https://placekitten.com/1200/800') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        #hero h1 {
+            font-size: 4rem;
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Breeds Section */
+        .breeds-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .breed-card {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            flex-basis: 30%;
+            min-width: 280px;
+        }
+
+        /* Contact Section */
+        .cta-button {
+            background-color: #ffb6c1;
+            color: #fff;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #ff9aab;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #e1d4c0;
+        }
+
+        /* Animation on Scroll */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .scroll-animate.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div class="logo">
+                The Cat Lovers' Corner
+            </div>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#breeds">Breeds</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Welcome to the World of Cats!</h1>
+            <p>Your daily dose of cuteness and whisker-ful wonders.</p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="scroll-animate">
+        <h2>Our Furry Friends</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://placekitten.com/300/300" alt="A cute kitten"></div>
+            <div class="gallery-item"><img src="https://placekitten.com/301/300" alt="A playful cat"></div>
+            <div class="gallery-item"><img src="https://placekitten.com/300/301" alt="A sleeping cat"></div>
+            <div class="gallery-item"><img src="https://placekitten.com/302/300" alt="A cat in a box"></div>
+        </div>
+    </section>
+
+    <!-- Breeds Section -->
+    <section id="breeds" class="scroll-animate">
+        <h2>Discover Amazing Cat Breeds</h2>
+        <div class="breeds-container">
+            <div class="breed-card">
+                <h3>Siamese</h3>
+                <p>Known for their striking blue almond-shaped eyes and sociable nature.</p>
+            </div>
+            <div class="breed-card">
+                <h3>Maine Coon</h3>
+                <p>Gentle giants of the cat world, with a long, shaggy coat and friendly personality.</p>
+            </div>
+            <div class="breed-card">
+                <h3>Bengal</h3>
+                <p>Famous for their wild, leopard-like appearance and energetic, playful demeanor.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="scroll-animate">
+        <h2>Get in Touch</h2>
+        <p>Have a cute cat story to share? We'd love to hear from you!</p>
+        <a href="mailto:your-email@example.com" class="cta-button">Email Us</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 The Cat Lovers' Corner. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.scroll-animate');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
